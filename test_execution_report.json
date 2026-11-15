@@ -1,0 +1,126 @@
+{
+  "summary": {
+    "total": 13,
+    "passed": 11,
+    "failed": 2
+  },
+  "results": [
+    {
+      "id": "TC01 / RT01",
+      "scenario": "Valid appointment booking",
+      "expected": "Appointment confirmed for Test User",
+      "actual": "Appointment confirmed for Test User.",
+      "status": "PASS",
+      "durationMs": 750,
+      "date": "2026-11-15T09:45:50.616Z"
+    },
+    {
+      "id": "TC02 / RT02",
+      "scenario": "Empty form validation",
+      "expected": "Please complete all fields",
+      "actual": "Please complete all fields.",
+      "status": "PASS",
+      "durationMs": 206,
+      "date": "2026-11-15T09:45:50.824Z"
+    },
+    {
+      "id": "TC03 / RT03",
+      "scenario": "Invalid email rejection",
+      "expected": "Enter a valid email address",
+      "actual": "Enter a valid email address.",
+      "status": "PASS",
+      "durationMs": 536,
+      "date": "2026-11-15T09:45:51.360Z"
+    },
+    {
+      "id": "TC04 / RT04",
+      "scenario": "Past date rejection",
+      "expected": "Past dates are not allowed",
+      "actual": "",
+      "status": "FAIL",
+      "durationMs": 541,
+      "date": "2026-11-15T09:45:51.901Z"
+    },
+    {
+      "id": "TC05 / RT05",
+      "scenario": "No slot selected",
+      "expected": "Please complete all fields",
+      "actual": "Please complete all fields.",
+      "status": "PASS",
+      "durationMs": 474,
+      "date": "2026-11-15T09:45:52.375Z"
+    },
+    {
+      "id": "TC06 / RT06",
+      "scenario": "Duplicate slot rejection",
+      "expected": "This time slot is unavailable",
+      "actual": "This time slot is unavailable.",
+      "status": "PASS",
+      "durationMs": 1087,
+      "date": "2026-11-15T09:45:53.462Z"
+    },
+    {
+      "id": "TC07 / RT07",
+      "scenario": "Booking cancellation",
+      "expected": "Appointment cancelled",
+      "actual": "Appointment cancelled.",
+      "status": "PASS",
+      "durationMs": 658,
+      "date": "2026-11-15T09:45:54.120Z"
+    },
+    {
+      "id": "TC08",
+      "scenario": "Retry after invalid input",
+      "expected": "Appointment confirmed",
+      "actual": "Appointment confirmed for Retry User.",
+      "status": "PASS",
+      "durationMs": 708,
+      "date": "2026-11-15T09:45:54.828Z"
+    },
+    {
+      "id": "BV01",
+      "scenario": "Boundary: yesterday",
+      "expected": "Past dates are not allowed",
+      "actual": "",
+      "status": "FAIL",
+      "durationMs": 421,
+      "date": "2026-11-15T09:45:55.249Z"
+    },
+    {
+      "id": "BV02",
+      "scenario": "Boundary: today",
+      "expected": "Appointment confirmed",
+      "actual": "Appointment confirmed for Today User.",
+      "status": "PASS",
+      "durationMs": 382,
+      "date": "2026-11-15T09:45:55.631Z"
+    },
+    {
+      "id": "BV03",
+      "scenario": "Boundary: tomorrow",
+      "expected": "Appointment confirmed",
+      "actual": "Appointment confirmed for Tomorrow User.",
+      "status": "PASS",
+      "durationMs": 412,
+      "date": "2026-11-15T09:45:56.043Z"
+    },
+    {
+      "id": "BV04",
+      "scenario": "Boundary: blank date",
+      "expected": "Please complete all fields",
+      "actual": "Please complete all fields.",
+      "status": "PASS",
+      "durationMs": 403,
+      "date": "2026-11-15T09:45:56.446Z"
+    },
+    {
+      "id": "BV05",
+      "scenario": "Boundary: email without @ / domain",
+      "expected": "Enter a valid email address",
+      "actual": "Enter a valid email address.",
+      "status": "PASS",
+      "durationMs": 399,
+      "date": "2026-11-15T09:45:56.845Z"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "id": "e4f8b912-789a-4c21-b456-112233445566",
+  "version": "2.0",
+  "name": "Online Appointment Booking System - STQA Suite",
+  "url": "http://localhost:8080",
+  "tests": [
+    {
+      "id": "tc-001",
+      "name": "TC01_Valid_Booking",
+      "commands": [
+        { "id": "c1", "command": "open", "target": "/app/index.html", "value": "" },
+        { "id": "c2", "command": "type", "target": "id=name", "value": "Test User" },
+        { "id": "c3", "command": "type", "target": "id=email", "value": "test@example.com" },
+        { "id": "c4", "command": "type", "target": "id=date", "value": "2030-10-25" },
+        { "id": "c5", "command": "select", "target": "id=slot", "value": "label=10:00 AM" },
+        { "id": "c6", "command": "click", "target": "id=bookButton", "value": "" },
+        { "id": "c7", "command": "assertText", "target": "id=message", "value": "Appointment confirmed for Test User." }
+      ]
+    },
+    {
+      "id": "tc-002",
+      "name": "TC02_Empty_Form",
+      "commands": [
+        { "id": "c1", "command": "open", "target": "/app/index.html", "value": "" },
+        { "id": "c2", "command": "click", "target": "id=bookButton", "value": "" },
+        { "id": "c3", "command": "assertText", "target": "id=message", "value": "Please complete all fields." }
+      ]
+    },
+    {
+      "id": "tc-003",
+      "name": "TC03_Invalid_Email",
+      "commands": [
+        { "id": "c1", "command": "open", "target": "/app/index.html", "value": "" },
+        { "id": "c2", "command": "type", "target": "id=name", "value": "Test User" },
+        { "id": "c3", "command": "type", "target": "id=email", "value": "wrong-email-format" },
+        { "id": "c4", "command": "type", "target": "id=date", "value": "2030-10-25" },
+        { "id": "c5", "command": "select", "target": "id=slot", "value": "label=10:00 AM" },
+        { "id": "c6", "command": "click", "target": "id=bookButton", "value": "" },
+        { "id": "c7", "command": "assertText", "target": "id=message", "value": "Enter a valid email address." }
+      ]
+    },
+    {
+      "id": "tc-004",
+      "name": "TC04_Past_Date",
+      "commands": [
+        { "id": "c1", "command": "open", "target": "/app/index.html", "value": "" },
+        { "id": "c2", "command": "type", "target": "id=name", "value": "Test User" },
+        { "id": "c3", "command": "type", "target": "id=email", "value": "pratiksha@example.com" },
+        { "id": "c4", "command": "executeScript", "target": "document.getElementById('date').value = '2020-01-01'", "value": "" },
+        { "id": "c5", "command": "select", "target": "id=slot", "value": "label=10:00 AM" },
+        { "id": "c6", "command": "click", "target": "id=bookButton", "value": "" },
+        { "id": "c7", "command": "assertText", "target": "id=message", "value": "Past dates are not allowed." }
+      ]
+    },
+    {
+      "id": "tc-005",
+      "name": "TC05_No_Slot_Selected",
+      "commands": [
+        { "id": "c1", "command": "open", "target": "/app/index.html", "value": "" },
+        { "id": "c2", "command": "type", "target": "id=name", "value": "Test User" },
+        { "id": "c3", "command": "type", "target": "id=email", "value": "test@example.com" },
+        { "id": "c4", "command": "type", "target": "id=date", "value": "2030-10-25" },
+        { "id": "c5", "command": "click", "target": "id=bookButton", "value": "" },
+        { "id": "c6", "command": "assertText", "target": "id=message", "value": "Please complete all fields." }
+      ]
+    },
+    {
+      "id": "tc-006",
+      "name": "TC06_Duplicate_Slot",
+      "commands": [
+        { "id": "c1", "command": "open", "target": "/app/index.html", "value": "" },
+        { "id": "c2", "command": "type", "target": "id=name", "value": "First Booker" },
+        { "id": "c3", "command": "type", "target": "id=email", "value": "first@example.com" },
+        { "id": "c4", "command": "type", "target": "id=date", "value": "2030-10-25" },
+        { "id": "c5", "command": "select", "target": "id=slot", "value": "label=11:00 AM" },
+        { "id": "c6", "command": "click", "target": "id=bookButton", "value": "" },
+        { "id": "c7", "command": "assertText", "target": "id=message", "value": "Appointment confirmed for First Booker." },
+        { "id": "c8", "command": "type", "target": "id=name", "value": "Second Booker" },
+        { "id": "c9", "command": "type", "target": "id=email", "value": "second@example.com" },
+        { "id": "c10", "command": "click", "target": "id=bookButton", "value": "" },
+        { "id": "c11", "command": "assertText", "target": "id=message", "value": "This time slot is unavailable." }
+      ]
+    },
+    {
+      "id": "tc-007",
+      "name": "TC07_Cancel_Booking",
+      "commands": [
+        { "id": "c1", "command": "open", "target": "/app/index.html", "value": "" },
+        { "id": "c2", "command": "type", "target": "id=name", "value": "Test User" },
+        { "id": "c3", "command": "type", "target": "id=email", "value": "test@example.com" },
+        { "id": "c4", "command": "type", "target": "id=date", "value": "2030-10-25" },
+        { "id": "c5", "command": "select", "target": "id=slot", "value": "label=12:00 PM" },
+        { "id": "c6", "command": "click", "target": "id=bookButton", "value": "" },
+        { "id": "c7", "command": "click", "target": "id=cancelButton", "value": "" },
+        { "id": "c8", "command": "assertText", "target": "id=message", "value": "Appointment cancelled." }
+      ]
+    },
+    {
+      "id": "tc-008",
+      "name": "TC08_Retry_After_Invalid",
+      "commands": [
+        { "id": "c1", "command": "open", "target": "/app/index.html", "value": "" },
+        { "id": "c2", "command": "type", "target": "id=name", "value": "Retry User" },
+        { "id": "c3", "command": "click", "target": "id=bookButton", "value": "" },
+        { "id": "c4", "command": "assertText", "target": "id=message", "value": "Please complete all fields." },
+        { "id": "c5", "command": "type", "target": "id=email", "value": "retry@example.com" },
+        { "id": "c6", "command": "type", "target": "id=date", "value": "2030-10-25" },
+        { "id": "c7", "command": "select", "target": "id=slot", "value": "label=10:00 AM" },
+        { "id": "c8", "command": "click", "target": "id=bookButton", "value": "" },
+        { "id": "c9", "command": "assertText", "target": "id=message", "value": "Appointment confirmed for Retry User." }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "suite-regression",
+      "name": "Selenium Regression & Functional Suite",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "tc-001",
+        "tc-002",
+        "tc-003",
+        "tc-004",
+        "tc-005",
+        "tc-006",
+        "tc-007",
+        "tc-008"
+      ]
+    }
+  ]
+}

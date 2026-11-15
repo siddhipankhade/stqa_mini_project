@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Appointment Booking</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+<h1>Appointment Booking</h1>
+<form id="bookingForm">
+<label for="name">Name</label><input id="name" placeholder="Enter your full name">
+<label for="email">Email</label><input id="email" placeholder="example@domain.com">
+<label for="date">Appointment Date</label><input id="date" type="date">
+<label for="slot">Time Slot</label>
+<select id="slot">
+<option value="">Select a slot</option>
+<option>10:00 AM</option><option>11:00 AM</option>
+<option>12:00 PM</option>
+</select>
+<button id="bookButton">Book Appointment</button>
+</form>
+<p id="message"></p>
+<button id="cancelButton" type="button" hidden>Cancel</button>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

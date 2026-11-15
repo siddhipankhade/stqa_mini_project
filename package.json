@@ -1,0 +1,15 @@
+{
+  "name": "appointment-booking-stqa",
+  "version": "1.0.0",
+  "description": "Online Appointment Booking System Testing using Selenium WebDriver/IDE",
+  "main": "test_regression.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test_regression.js",
+    "test:headless": "node test_regression.js --headless",
+    "test:edge": "node test_regression.js --edge"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.18.0"
+  }
+}
