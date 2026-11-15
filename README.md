@@ -2,7 +2,7 @@
 ### Software Testing and Quality Assurance (STQA) Mini-Project
 Department of Computer Engineering, PCCOER
 
-**Submitted by:** Arya Naik (TECOC28), Samiksha Ner (TECOC31), Siddhi Pankhade (TECOC38), Akash Patil (TECOC42)
+**Submitted by:** Siddhi Pankhade (TECOC38), Akash Patil (TECOC42), Samiksha Ner (TECOC31), Arya Naik (TECOC28)
 **Submitted to:** Dr. Vijay A. Kotkar
 
 ## Folder structure
